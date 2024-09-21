@@ -4,19 +4,17 @@ project(TTaskScheduler VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 
-if(msvc)
-  set(COMPILE_COMMANDS "/W4 /WX /permissive-")
-else()
-  set(COMPILE_COMMANDS "-Wall -Wextra -pedantic")
-endif()
-
-set(CMAKE_CXX_FLAGS_DEBUG ${COMPILE_COMMANDS})
-set(CMAKE_CXX_FLAGS_RELEASE ${COMPILE_COMMANDS})
-
 set(SOURCES bin/main.cpp)
 set(HEADERS lib)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+# Условные флаги компиляции
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX /permissive-)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -pedantic)
+endif()
+
 include_directories(${PROJECT_NAME} ${HEADERS})
 
 add_subdirectory(tests)
