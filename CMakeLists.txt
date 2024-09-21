@@ -4,9 +4,14 @@ project(TTaskScheduler VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic")
+if(msvc)
+  set(COMPILE_COMMANDS "/W4 /WX /permissive-")
+else()
+  set(COMPILE_COMMANDS "-Wall -Wextra -pedantic")
+endif()
 
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall -Wextra -pedantic")
+set(CMAKE_CXX_FLAGS_DEBUG ${COMPILE_COMMANDS})
+set(CMAKE_CXX_FLAGS_RELEASE ${COMPILE_COMMANDS})
 
 set(SOURCES bin/main.cpp)
 set(HEADERS lib)
