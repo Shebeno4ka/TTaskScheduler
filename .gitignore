@@ -1,0 +1,47 @@
+# Исключаем сборочные файлы
+/build/
+
+# Исключаем кеши
+.cache/
+
+# Исключаем временные файлы
+*.tmp
+*.log
+*.swp
+*.swo
+*.bak
+
+# Исключаем файлы CMake
+CMakeCache.txt
+CMakeFiles/
+/cmake_install.cmake
+
+# Исключаем объектные файлы и исполняемые файлы
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+
+# Исключаем файлы компилятора
+*.a
+*.lib
+
+# Исключаем конфигурационные файлы IDE (например, Visual Studio, Rider и другие)
+*.idea
+*.vs
+*.vscode
+*.user
+*.sln
+*.csproj
+
+# Исключаем clang-format и clang-tidy файлы, если не нужно их отслеживать
+.clang-format
+.clang-tidy
+
+# Исключаем файлы документации
+*.md
+README.md
+Task.md
