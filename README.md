@@ -1,6 +1,6 @@
 # TTaskScheduler
 
-TTaskScheduler is a simple yet powerful task scheduling framework designed for managing and executing tasks with dependencies in a flexible and type-safe manner.
+TTaskScheduler is a simple task scheduling library designed for managing and executing tasks with dependencies in a flexible and type-safe manner.
 It allows for the scheduling of tasks with arguments, supports the chaining of task results, and ensures that tasks are evaluated lazily.
 
 *This project is developed as part of my 10th lab assignment for the C++ course in Software Engineering (Information Systems) at FITiP, ITMO University.*
