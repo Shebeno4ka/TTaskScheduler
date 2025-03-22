@@ -1,11 +1,14 @@
 # TTaskScheduler
 
-TTaskScheduler is a simple task scheduling library designed for managing and executing tasks with dependencies in a flexible and type-safe manner.
-It allows for the scheduling of tasks with arguments, supports the chaining of task results, and ensures that tasks are evaluated lazily.
+Моё решение лабораторной работы по курсу "Программирование на C++"
+Задачей было написать constexpr ленивый планировщик задач.
 
-*This project is developed as part of my 10th lab assignment for the C++ course in Software Engineering (Information Systems) at FITiP, ITMO University.*
+По изначальному условию в каждой задаче не более двух аргументов.
+Я реализовал без этого ограничения, применив variadic templates и perfect forwarding.
 
-*The initial conditions for the lab assignment are located in the Task.md file.*
+Сборка реализована через CMake.
+
+*Оригинальное ТЗ можно найти в файле Task.md.*
 
 Examples:
 
@@ -51,7 +54,7 @@ Lazy working:
   auto id6 = scheduler.add([](float a, float v) { return v / (2 * a); }, a,
                            scheduler.getFutureResult<float>(id4));
 
-  scheduler.executeAll(); // id2 task will be executed once
+  scheduler.executeAll(); // id2 task will be executed only once
 
   ASSERT_EQ(scheduler.getResult<float>(id5), 2);
   ASSERT_EQ(scheduler.getResult<float>(id6), 0);
