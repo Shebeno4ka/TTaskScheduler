@@ -10,7 +10,7 @@
 
 *Оригинальное ТЗ можно найти в файле Task.md.*
 
-Examples:
+Примеры:
 
 ```
   TTaskScheduler scheduler;
@@ -28,7 +28,7 @@ Examples:
   int result2 = scheduler.getResult<int>(task2); // 25
 ```
 
-Lazy working:
+Ленивая работа:
 ```
   float a = 1;
   float b = -2;
